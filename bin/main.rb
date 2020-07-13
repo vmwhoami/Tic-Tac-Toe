@@ -77,8 +77,6 @@ while max_number_of_input.positive?
   max_number_of_input -= 1
   current_player = current_player == first_player ? second_player : first_player
 
+  #   puts "It is a draw!!!" if max_number_of_input == 0
 
-#   puts "It is a draw!!!" if max_number_of_input == 0
- 
 end
-
