@@ -39,6 +39,19 @@ current_player = [first_player, second_player].sample
 max_number_of_input = 9
 
 selected_value_array = []
+# win_scenario =  [
+#     [0, 1, 2],
+#     [3, 4, 5],
+#     [6, 7, 8],
+#     [0, 3, 6],
+#     [1, 4, 7],
+#     [2, 5, 8],
+#     [0, 4, 8],
+#     [6, 4, 2]
+#   ]
+
+# first_player_array = []
+# second_player_array = []
 
 while max_number_of_input.positive?
   puts "#{current_player} enter a random number between 1-9"
@@ -51,7 +64,21 @@ while max_number_of_input.positive?
     puts "#{value} as already been selected, kindly select another value"
     value = gets.chomp.to_i
   end
+  # if win_scenario.include?(first_player_array)
+  # puts "#{first_player} WINS!!!"
+  #   break
+  # end
+
+  # if win_scenario.include?(second_player_array)
+  # puts "#{second_player} WINS!!!"
+  #   break
+  # end
   selected_value_array.push(value)
   max_number_of_input -= 1
   current_player = current_player == first_player ? second_player : first_player
+
+
+#   puts "It is a draw!!!" if max_number_of_input == 0
+ 
 end
+
