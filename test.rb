@@ -38,6 +38,7 @@ puts 'We would randomly select a player to start the game'
 sleep 2
 
 game = GameLogic.new
+board = Board.new(first_player,second_[player])
 
 current_player = game.random_player(first_player,second_player)
 def player_move(player,validation,board)
