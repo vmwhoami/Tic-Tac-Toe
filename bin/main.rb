@@ -1,5 +1,4 @@
-# !/usr/bin/env ruby
-
+# !/usr/bin/env
 puts 'Welcome to the awesome tic tac toe game implementation in ruby'
 
 sleep 1
