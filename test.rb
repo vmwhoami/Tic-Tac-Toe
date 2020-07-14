@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
-require_relative '../lib/board.rb'
-
+require_relative './lib/board.rb'
+require_relative './lib/game_logic.rb'
 
 puts 'Welcome to the awesome tic tac toe game implementation in ruby'
 
@@ -27,7 +27,7 @@ puts '4. When all 9 squares are full, the game is over. If no player has 3 marks
 
 print 'First player kindly enter your name :'
 
-first_player = gets.chomp
+first_player =  gets.chomp
 
 print 'Second player kindly enter your name :'
 
@@ -35,26 +35,37 @@ second_player = gets.chomp
 
 puts 'We would randomly select a player to start the game'
 
-# sleep 2
+sleep 2
 
-# current_player = [first_player, second_player].sample
+game = GameLogic.new
 
-# max_number_of_input = 9
+current_player = game.random_player(first_player,second_player)
+def player_move(player,validation,board)
+    puts board.display_board
+    puts "#{current_player} enter a random number between 1-9"
+    value = gets.chomp.to_i
+    until game.valid_input?(value)
+        puts ' kindly input a number between 1 - 9 and make sure it has not been selected'
+    end
+    game.update_sel_val_array(value)
+    board.update_board(current_player,option_selected)
+end
 
-# selected_value_array = []
-# # win_scenario =  [
-# #     [0, 1, 2],
-# #     [3, 4, 5],
-# #     [6, 7, 8],
-# #     [0, 3, 6],
-# #     [1, 4, 7],
-# #     [2, 5, 8],
-# #     [0, 4, 8],
-# #     [6, 4, 2]
-# #   ]
+until board.full?
+    player_move(current_player,game,board)
+    current_player = current_player == first_player ? second_player : first_player
+end
 
-# # first_player_array = []
-# # second_player_array = []
+ print "#{current_player} enter a random number between 1-9:"
+
+#  value = gets.chomp.to_i
+
+
+# while game.valid_input?(value)
+#         puts ' kindly input a number between 1 to 9'
+#         value = gets.chomp.to_i
+#    end
+
 
 # while max_number_of_input.positive?
 #   puts "#{current_player} enter a random number between 1-9"
