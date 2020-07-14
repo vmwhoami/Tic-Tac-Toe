@@ -38,11 +38,12 @@ class Board
 
     separator = '|'
 
-    puts "\n| #{@board[0]} #{separator} #{@board[1]} #{separator} #{@board[2]} |
+       "\n| #{@board[0]} #{separator} #{@board[1]} #{separator} #{@board[2]} |
 
        \n| #{@board[3]} #{separator} #{@board[4]} #{separator} #{@board[5]} |
 
-       \n| #{@board[6]} #{separator} #{@board[7]} #{separator} #{@board[8]} | "
+       \n| #{@board[6]} #{separator} #{@board[7]} #{separator} #{@board[8]} |
+       \n "
 
   end
 
@@ -71,12 +72,7 @@ class Board
   end
 
   def board_slot_completed?
-    
-    if @highest_turns < 1
-      puts 'it is a draw'
-      return true
-    end
-    false
+   @highest_turns < 1 
   end
 
 end

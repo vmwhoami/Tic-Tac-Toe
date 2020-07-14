@@ -1,7 +1,9 @@
 #!/usr/bin/env ruby
 
-require_relative '../lib/board.rb'
+require_relative '../lib/board'
+require_relative '../lib/game_logic'
 
+game_validation = GameLogic.new
 
 puts 'Welcome to the awesome tic tac toe game implementation in ruby'
 
@@ -33,55 +35,37 @@ print 'Second player kindly enter your name :'
 
 second_player = gets.chomp
 
+game_board = Board.new(first_player, second_player)
+
 puts 'We would randomly select a player to start the game'
 
-# sleep 2
+sleep 2
 
-# current_player = [first_player, second_player].sample
+current_player = game_validation.random_player(first_player, second_player)
 
-# max_number_of_input = 9
+def player_move(current_player, game, board)
+  puts board.display_board
+  puts "#{current_player} enter a random number between 1-9"
+  value = gets.chomp.to_i
+  until game.valid_input?(value)
+    puts ' kindly input a number between 1 - 9 and make sure it has not been selected'
+    value = gets.chomp.to_i
+  end
+  game.update_sel_val_array(value)
+  board.update_board(current_player, value)
+end
 
-# selected_value_array = []
-# # win_scenario =  [
-# #     [0, 1, 2],
-# #     [3, 4, 5],
-# #     [6, 7, 8],
-# #     [0, 3, 6],
-# #     [1, 4, 7],
-# #     [2, 5, 8],
-# #     [0, 4, 8],
-# #     [6, 4, 2]
-# #   ]
+until game_board.board_slot_completed?
+  player_move(current_player, game_validation, game_board)
+  if game_board.win?
+    game_board.display_board
+    return puts "#{current_player} has won"
+  end
+  game_board.highest_turns -= 1
+  current_player = current_player == first_player ? second_player : first_player
+end
 
-# # first_player_array = []
-# # second_player_array = []
-
-# while max_number_of_input.positive?
-#   puts "#{current_player} enter a random number between 1-9"
-#   value = gets.chomp.to_i
-#   puts "Display game board for players"
-#   while (1..9).none?(value)
-#     puts ' kindly input a number between 1 - 9'
-#     value = gets.chomp.to_i
-#   end
-#   while selected_value_array.include?(value)
-#     puts "#{value} as already been selected, kindly select another value"
-#     value = gets.chomp.to_i
-#   end
-#   # if win_scenario.include?(first_player_array)
-#   # puts "#{first_player} WINS!!!"
-#   #   break
-#   # end
-
-#   # if win_scenario.include?(second_player_array)
-#   # puts "#{second_player} WINS!!!"
-#   #   break
-#   # end
-#   selected_value_array.push(value)
-#   max_number_of_input -= 1
-#   current_player = current_player == first_player ? second_player : first_player
-
-#   #   puts "It is a draw!!!" if max_number_of_input == 0
-
-# end
-
+if game_board.board_slot_completed?
+    puts game_board.display_board
+    puts 'it is a draw'
+end
