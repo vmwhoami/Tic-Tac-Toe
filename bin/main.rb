@@ -58,7 +58,7 @@ end
 until game_board.board_slot_completed?
   player_move(current_player, game_validation, game_board)
   if game_board.win?
-    game_board.display_board
+    puts game_board.display_board
     return puts "#{current_player} has won"
   end
   game_board.highest_turns -= 1
@@ -66,6 +66,6 @@ until game_board.board_slot_completed?
 end
 
 if game_board.board_slot_completed?
-    puts game_board.display_board
-    puts 'it is a draw'
+  puts game_board.display_board
+  puts 'it is a draw'
 end
