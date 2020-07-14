@@ -56,6 +56,7 @@ selected_value_array = []
 while max_number_of_input.positive?
   puts "#{current_player} enter a random number between 1-9"
   value = gets.chomp.to_i
+  puts "Display game board for players"
   while (1..9).none?(value)
     puts ' kindly input a number between 1 - 9'
     value = gets.chomp.to_i
