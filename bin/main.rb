@@ -1,4 +1,4 @@
-# !/usr/bin/env ruby
+#!/usr/bin/env ruby
 
 require_relative '../lib/board'
 require_relative '../lib/game_logic'
@@ -7,23 +7,23 @@ game_validation = GameLogic.new
 
 puts 'Welcome to the awesome tic tac toe game implementation in ruby'
 
-sleep 1
+sleep(0.5)
 
 puts 'RULES FOR TIC-TAC-TOE'
 
-sleep 2
+sleep(0.5)
 
 puts "1. The game is played on a grid that's 3 squares by 3 squares."
 
-sleep 2
+sleep(0.5)
 
 puts '2. You are X, your friend is O. Players take turns putting their marks in empty squares.'
 
-sleep 2
+sleep(0.5)
 
 puts '3. The first player to get 3 of her marks in a row (up, down, across, or diagonally) is the winner.'
 
-sleep 2
+sleep(0.5)
 
 puts '4. When all 9 squares are full, the game is over. If no player has 3 marks in a row, the game ends in a tie.'
 
