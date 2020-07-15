@@ -30,10 +30,21 @@ puts '4. When all 9 squares are full, the game is over. If no player has 3 marks
 print 'First player kindly enter your name :'
 
 first_player = gets.chomp
+while first_player.strip.empty?
+  puts 'Name can not be empty!!!'
+  print 'Kindly enter a valid name:'
+  first_player = gets.chomp
+end
 
 print 'Second player kindly enter your name :'
 
 second_player = gets.chomp
+while second_player.strip.empty? || first_player == second_player
+  puts 'Name can not be empty!' if second_player.strip.empty?
+  puts "Both players can't have the same name!!!" if first_player == second_player
+  print ' Kindly enter a valid name:'
+  second_player = gets.chomp
+end
 
 game_board = Board.new(first_player, second_player)
 
