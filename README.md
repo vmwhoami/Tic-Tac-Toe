@@ -3,8 +3,8 @@
 <div align="center">
 
 [![Status](https://img.shields.io/badge/status-active-success.svg)]()
-[![Github Issues](https://img.shields.io/badge/GitHub-Issues-orange)](https://github.com/luciano-ilha/Tic-Tac-Toe/issues)
-[![GitHub2 Pull Requests](https://img.shields.io/badge/GitHub-Pull%20Requests-blue)](https://github.com/luciano-ilha/Tic-Tac-Toe/pulls)
+[![Github Issues](https://img.shields.io/badge/GitHub-Issues-orange)](https://github.com/somoye123/Tic-Tac-Toe/issues)
+[![GitHub2 Pull Requests](https://img.shields.io/badge/GitHub-Pull%20Requests-blue)](https://github.com/somoye123/Tic-Tac-Toe/pulls)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
 
 </div>
@@ -24,7 +24,7 @@
 
 This project is meant for learning and implementing object oriented programming principles in Ruby.
 
-![Screenshot](#)
+![Screenshot](./screenshot.png)
 
 ## 🔧 Built with<a name = "built_using"></a>
 
@@ -35,9 +35,9 @@ This project is meant for learning and implementing object oriented programming 
 Clone and run this repository by running these commands on the terminal:
 
 ```
-- git clone https://github.com/somoye123/Tic-Tac-Toe;
+- git clone https://github.com/somoye123/Tic-Tac-Toe.git
 - cd bin/
-- Run ruby main
+- Run ruby main.rb
 ```
 
 ## Game rules
@@ -60,7 +60,7 @@ Clone and run this repository by running these commands on the terminal:
 - There are 8 winning combinations: Top row, Middle row, Bottom row, Left column, Middle column, Right column, Left diagonal, and Right diagonal.
 - There’s a draw/tie when the entire board is filled with X’s and O’s but no winning combinations can be found.
 
-## ✒️ Authors <a name = "author"></a>
+## ✒️ Authors <a name = "authors"></a>
 
 👤 **Somoye**
 
