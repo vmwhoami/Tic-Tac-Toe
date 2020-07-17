@@ -1,5 +1,5 @@
 class Board
-  attr_accessor :highest_turns
+  attr_accessor :highest_turns, :board
 
   def initialize(first, second)
     @board = %w[1 2 3 4 5 6 7 8 9]
