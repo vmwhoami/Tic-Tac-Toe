@@ -30,6 +30,11 @@ This project is meant for learning and implementing object oriented programming 
 
 - [Ruby](https://www.ruby-lang.org/);
 
+## Live preview
+
+- [Live preview](https://repl.it/@vmwhoami/Tic-Tac-Toe#bin/main.rb);
+
+
 ### 🛠 Installing <a name = "installing"></a>
 
 Clone and run this repository by running these commands on the terminal:
